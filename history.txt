@@ -1,0 +1,333 @@
+    1  #!/bin/sh
+    2  SCRIPT="$0"
+    3  # Resolve the chain of symlinks leading to this script.
+    4  while [ -L "$SCRIPT" ] ; do     LINK=$(readlink "$SCRIPT");      case "$LINK" in         /*)             SCRIPT="$LINK";             ;;         *)             SCRIPT="$(dirname "$SCRIPT")/$LINK";             ;;     esac; done
+    5  # The directory containing this shell script - an absolute path.
+    6  ROOT=$(dirname "$SCRIPT")
+    7  ROOT=$(cd "$ROOT"; pwd)
+    8  # The name of this shell script without the .sh on the end.
+    9  BASEFILE=$(basename "$SCRIPT" .sh)
+   10  if [ -z "$RENPY_PLATFORM" ] ; then     case "$(uname -s)-$(uname -m)" in         Darwin-*)             RENPY_PLATFORM="darwin-x86_64";             ROOT1="$ROOT/../Resources/autorun";             ROOT2="$ROOT/../../..";                         ;;         *-x86_64|amd64)             RENPY_PLATFORM="linux-x86_64";             ROOT1="$ROOT";             ROOT2="$ROOT";                         ;;         *-i*86)             RENPY_PLATFORM="linux-i686";             ROOT1="$ROOT";             ROOT2="$ROOT";             ;;         *)             echo "Ren'Py could not detect that platform it's running on. Please set";             echo "the RENPY_PLATFORM environment variable to one of \"linux-i686\" or";             echo "\"linux-x86_64\", or \"darwin-x86_64\" and run this command again.";             exit 1;             ;;     esac; fi
+   11  for BASE in "$ROOT" "$ROOT1" "$ROOT2"; do     LIB="$BASE/lib/$RENPY_PLATFORM"; 		if test -d "$LIB"; then 		    break; 		fi; done
+   12  exec $RENPY_GDB "$LIB/$BASEFILE" $RENPY_PYARGS -EO "$BASE/$BASEFILE.py" "$@"
+   13  #!/bin/bach
+   14  echo "Hello $USER"
+   15  pwd
+   16  echo "Current date : $(date)"
+   17  echo "This script was launched from :$(pwd)"
+   18  echo "Count processes by bioset $(ps -ef |grep bioset | grep -v grep |wc -1)"
+   19  echo "File /etc/passwd rigst: $(ls -alh /etc/passwd |awk '{print $1}' )"
+   20  #!/bin/bach
+   21  echo "Hello $USER"
+   22  pwd
+   23  echo "Current date : $(date)"
+   24  echo "This script was launched from :$(pwd)"
+   25  echo "Count processes by bioset $(ps -ef |grep bioset | grep -v grep |wc -1)"
+   26  echo "File /etc/passwd rigst: $(ls -alh /etc/passwd |awk '{print $1}' )"
+   27  #!/bin/bach
+   28  echo "Hello $USER"
+   29  pwd
+   30  echo "Current date : $(date)"
+   31  echo "This script was launched from :$(pwd)"
+   32  echo "Count processes by bioset $(ps -ef |grep bioset | grep -v grep |wc -1)"
+   33  echo "File /etc/passwd rigst: $(ls -alh /etc/passwd |awk '{print $1}' )"
+   34  #!/bin/bach
+   35  echo "Hello $USER"
+   36  pwd
+   37  echo "Current date : $(date)"
+   38  echo "This script was launched from :$(pwd)"
+   39  echo "Count processes by bioset $(ps -ef |grep bioset | grep -v grep |wc -1)"
+   40  echo "File /etc/passwd rigst: $(ls -alh /etc/passwd |awk '{print $1}' )"
+   41  #!/bin/bach
+   42  echo "Hello $USER"
+   43  pwd
+   44  echo "Current date : $(date)"
+   45  echo "This script was launched from :$(pwd)"
+   46  echo "Count processes by bioset $(ps -ef |grep bioset | grep -v grep |wc -1)"
+   47  echo "File /etc/passwd rigst: $(ls -alh /etc/passwd |awk '{print $1}' )"
+   48  git config --global user.name 
+   49  git config --global user.email inna.graur82@mail
+   50  git config --global user.name inna.gar
+   51   
+   52  git config --global user.name inna.graur82@gmail.com
+   53  git clone git@github.com:Innessa42/git_intro.git  
+   54  git config -l
+   55  git config --global -l
+   56  git config --global user.email "inna.graur82@gmail.com"
+   57  git config --global -l
+   58  git config --global user.name "innag"
+   59  git config --global -l
+   60  git clone git@github.com:Innessa42/git_intro.git
+   61  git clone git@github.com:Innessa42/git_intro.git
+   62  ls -al
+   63  cd git_intro/
+   64  ls -al
+   65  cd IT-CH/GIT/Work
+   66  cd IT-CH/GIT/Work$ ls -la
+   67  cd IT-CH/GIT/Work$ cd 310524-ptm/
+   68  cd IT-CH/GIT/Work$ cd 310524-ptm/ ls -al
+   69  ыыр
+   70  ssh
+   71  pwd
+   72  ls - al
+   73  ls -al
+   74  cd Desktop/
+   75  mkdir -p hausaufgabe14 
+   76  cd hausaufgabe14/
+   77  git clone git@github.com:Innessa42/learning_git.git
+   78  cd learning_git
+   79  cd 310524-ptm/
+   80  nano graur.txt
+   81  ls -al
+   82  git status
+   83  git add graur.txt 
+   84  git commit -m "add new file graur.txt"
+   85  git push
+   86  find . -type d -name ".git" 
+   87  git init
+   88  git add .
+   89  git status
+   90  git commit -m " init mono repo"
+   91  git remote add origin git@github.com:Innessa42/ich-hub-learn-2024.git
+   92  git branch -M main
+   93  git push -u origin main
+   94  exit
+   95  cd IT-CH/GIT/Work/
+   96  mkdir git-merge
+   97  ls -al
+   98  cd gitmerge/
+   99  cd Documents/
+  100  ls -al
+  101  cd ..
+  102  cd My\ Documents/
+  103  ls -al
+  104  exit
+  105  ssh-keygen.exe
+  106  ssh-keygen.exe
+  107  cat
+  108   ssh-keygen.exe
+  109   cat c/Users/innag/.ssh/id_ed25519.pub
+  110  ls -l /c/Users/innag/ .ssh/
+  111  ssh -i /c/Users/innag/.ssh/id_ed25519 ec2-user@linux.itcareerhub.de
+  112  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIElt5J7r01zkA59ajJl+jeorzABed8FBewJ2DIow1l7 innag@Moya-Prelesti
+  113  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIElt5J7r01zkA59ajJl+jeorzABed8FBewJ2DIow1l7 innag@Moya-Prelesti
+  114  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0gFlhkNaPqv8neco2plLhYPVnYIcwvcs921Gbb7aFBM1ZmiMazVrQbwGlExZyX9uJRjpNObaYrc0XxHu4wuWuzfY+X7vl8tisTMmSuuKwDzN44O1dipYsFtngkEJ9fs+VZ+zuQ5URQNh0tea+bvE3DSpEgohJDmYbWQ6UHzFLetnWIoLE8Xycv4ZS0G/0mLStuF6OoSMlYG1cG0uHihPf8q/e87nHWpaI+O0hf12HRi53gvXD4gsqlfM/yzqKCYGCTlrGX+shBRqkzVHiBPTW0gpToD1JTdRtboixuurW2GzFKBRnWj634G0Oka+OdFL2ZQabA5ulUNYxzRDln1VWuKuA1kV7NHVnXRMYczX/B8zySH6TZX06l8M+AFQXna95YMI0iD3eeX7iNKjTq3veBb+K+Y3NMtsc0D50lzmg9ABQPGcl8IIu72EY7X+GAhwD36qtCZLgVVEHT579Kua6pGyltPYRRpGdlWpozExNgYN1Aag72xCTet0G4M3Kan8= inna.graur82@gmail.com
+  115  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIElt5J7r01zkA59ajJl+jeorzABed8FBewJ2DIow1l7 innag@Moya-Prelesti
+  116  ssh
+  117  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIElt5J7r01zkA59ajJl+jeorzABed8FBewJ2DIow1l7 innag@Moya-Prelesti
+  118  ssh
+  119  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  120  scp -i ~/.ssh/id_rsa ec2-user@linux.itcareerhub.de:
+  121  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIElt5J7r01zkA59ajJl+jeorzABed8FBewJ2DIow1l7 innag@Moya-Prelesti
+  122  "C:\Users\innag\.ssh\id_ed25519"
+  123  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  124   ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  125   ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  126  scp -i  "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de:/opt/160924-ptm/Inna_Graur/file.txt
+  127  scp -i  "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de:/opt/160924-ptm/Inna_Graur/file.txt  ~/
+  128  ls
+  129  pwd
+  130  ls
+  131  exit
+  132  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.d
+  133  scp -i ~/.ssh/id_rsa ec2-user@linux.itcareerhub.de
+  134  scp -i ~/.ssh/id_rsa ec2-user@linux.itcareerhub.de
+  135  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de 
+  136  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  137  export INNA_GRAUR="160924-ptm_group"
+  138  echo ' export INNA_GRAUR="160924-ptm_group" >> ~ /.bashrc
+  139  echo ' export INNA_GRAUR="160924-ptm_group" ' >> ~ /.bashrc
+  140  echo ' export INNA_GRAUR="160924-ptm_group" >> ~ /.bashrc
+  141  echo ' export INNA_GRAUR="160924-ptm_group"' >> ~ /.bashrc
+  142  source  ~/.bashrc
+  143  export Inna_GRAUR_VARIABLE="160924-ptm_example_group"
+  144  sudo mkdir -p /opt/160924-ptm_example_group/INNA_GRAUR
+  145  echo 'export  INNA_GRAUR_VARIABLE="160924-ptm_example_group"' >> ~/ .bashrc
+  146  sudo mkdir -p /opt/160924-ptm_example_group/INNA_GRAUR
+  147  sudo touch /opt/160924-ptm_example_group/INNA_GRAUR/.process_management
+  148  git config --global user.name "Molda"
+  149  git config --global user.email "inna.graur82@gmail.com"
+  150  git config --list
+  151  pwd
+  152  mkdir ~/new_first_repo
+  153  cd new_first_repo/
+  154  git init
+  155  ls -la
+  156  touch file.txt
+  157  ls -la
+  158  gid add file.txt
+  159  git add file.txt
+  160  git status
+  161  git commit -m "First commit"
+  162  git status
+  163  git remote add origin git@github.com:Innessa42/mold-my.git
+  164  git push -u origin
+  165  git branch -M main
+  166  git push -u origin
+  167  git push -u origin main
+  168  pwd
+  169  pwd
+  170  mkdir  ~  mkdir ~/new_git_intro2
+  171  mkdir ~/new_git_intro5
+  172  cd ne_git_intro5
+  173  pwd
+  174  mkdir ~/new_git_intro5
+  175  git inot
+  176  echo "#git_intro5" >>README.md
+  177  git init
+  178  git add README.md
+  179  git add new_git-intro5
+  180  git commit -m "first commit"
+  181  git branch -M main
+  182  git remote add origin git@github.com:Innessa42/git_intro5.git
+  183  git push -u origin main
+  184  mkdir git_intro
+  185  mkadir git_intro4
+  186  mkdir git_intro
+  187  mkdir git_intro4
+  188  зцв
+  189  pwd
+  190  ды
+  191  ls
+  192  rm -rf .git
+  193  ls
+  194  rm -rf git_intro4
+  195  rm -rf git_intro
+  196  rm -rf new_git_intro2
+  197  rm -rf new_git_intro5
+  198  ls
+  199  clear
+  200  mkdir ~/git_intro
+  201  ls
+  202  cd git_intro/
+  203  git init
+  204  git branch -M main
+  205  touch file_intro.txt
+  206  ls
+  207  git add file_intro.txt
+  208  git status
+  209  git commit -m "zagruska faila"
+  210  git status
+  211  git remote add origin https://github.com/Innessa42/git_intro.git
+  212  git puch -u origin main
+  213  git push -u origin main
+  214  git push -u origin main
+  215  git status
+  216  git remote add origin https://github.com/Innessa42/git_intro.git 
+  217  git push -u origin main
+  218  date
+  219  date >> file_intro.txt 
+  220  git add file_intro.txt
+  221  git commit -m "foto oseni"
+  222  git push -u origin main
+  223  git remote add origin https://github.com/Innessa42/git_intro.git
+  224  git push -u origin main
+  225  git clone
+  226  pwd
+  227  git clone git@github.com:Innessa42/git-branch.git
+  228  git checkout
+  229  cd git-branch/
+  230  git checkout -b gitignore
+  231  cd ..
+  232  rm -rf git-branch
+  233  mkdir ~/git-branch
+  234  cd git-branch/
+  235  git init
+  236  git branch -M main
+  237  git remote add origin git@github.com:Innessa42/git-branch.git
+  238  git checkout -b gitignore
+  239  curl -O https://github.com/aliaskov/bashscripts/blob/master/.gitignore 
+  240  git commit -m "added gitignore"
+  241  git add .gitignore
+  242  ls -la
+  243  git push -u origin gitignot
+  244  git push -u origin gitignore
+  245  git commit -m "added gitignore"
+  246  git push -u origin gitignore
+  247  history
+  248  history | greep ssh
+  249  ssh -i ec2-user@carrerhub.de
+  250   ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  251   ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  252   ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de 
+  253  ps -U root
+  254  ps -U root | wc -l
+  255  ps --help
+  256   ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  257   ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  258  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de 
+  259  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de 
+  260  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  261  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  262  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  263  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  264   ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  265  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de 
+  266   ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  267   ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de 
+  268  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  269  vim
+  270  pwd
+  271  ls -la
+  272  vim script.sh
+  273  bash script.sh
+  274  ls -la
+  275  cat 
+  276   ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  277   ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  278   ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  279  git clon https://github.com/Innessa42/repo_13.git
+  280  git clone https://github.com/Innessa42/repo_13.git/test_repo13.git
+  281  git clone https://github.com/Innessa42/repo_13.git
+  282  ls -la
+  283  git add README.md
+  284  pwd
+  285  cd  test_repo13
+  286  cd  test_repo13.git
+  287   cd /test_repo13.git
+  288  cd repo13
+  289  cd repo13.git
+  290  ls -la
+  291  cd repo_13/
+  292  git add README.md
+  293  git commit -m "added new date"
+  294  pwd
+  295  git push origin main
+  296  git clone https://github.com/Innessa42/learning_git.git
+  297  git clone https://github.com/Innessa42/learning_git.git
+  298  cd learning_git/
+  299  mkdir 160924-ptm
+  300  cd 160924-ptm/
+  301  touch Graur.txt
+  302  ls -la
+  303  date >> Graur.txt 
+  304  cat Graur.txt 
+  305  git add Graur.txt 
+  306  git status
+  307  git commit -m "pervoie commit -m a potom git push"
+  308  git push -u origin main
+  309  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de
+  310  ssh -i "C:\Users\innag\.ssh\id_ed25519" ec2-user@linux.itcareerhub.de 
+  311  touch myfirstbashscript.sh
+  312  ls -la
+  313  cd git-branch/
+  314  ls -la
+  315  cd ..
+  316  rm -rf git-branch/
+  317  git clone https://github.com/Innessa42/git-branch.git
+  318  cd git-branch/
+  319  git checkaut -b feature
+  320  git checkout -b feature
+  321  touch readme.md 
+  322  vi .gitignore 
+  323  git status
+  324  git add .
+  325  git status
+  326  git kommit -m
+  327  git kommit -m "lerne"
+  328  git commit -m "lerne"
+  329  git push -u origin feature
+  330  git commit --amend -m "ammend"
+  331  git checkout gitignore
+  332  git merge feature
+  333  history > history.txt
